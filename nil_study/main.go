@@ -40,6 +40,8 @@ func main() {
 	enf = nil
 	fmt.Println(enf) // <nil>
 
+	/* note: error is a interface so we can compare it with nil */
+	/* type error interface { Error() string } */
 	var inf Inf
 	inf = nil
 	fmt.Println(inf) // <nil>
