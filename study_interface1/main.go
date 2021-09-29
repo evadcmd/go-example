@@ -28,5 +28,7 @@ func main() {
 
 	// cannot compare nil == nil (operator == not defined for untyped nil)
 	// fmt.Println(nil == nil)
+
+	// true if and only if {type: nil, data: nil}
 	fmt.Println(isNil(nil)) // true!!
 }
