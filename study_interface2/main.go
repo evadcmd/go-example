@@ -53,4 +53,7 @@ func main() {
 
 	var dog2 Animal = &Dog{Name: "CHIBI", Age: 0}
 	dog2.Eat("milk")
+
+	var any interface{} = dog2
+	fmt.Println(any)
 }

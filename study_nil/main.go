@@ -72,4 +72,7 @@ func main() {
 	ch := make(chan<- int)
 	ch = nil
 	fmt.Println(ch) // <nil>
+
+	iptr := (*int)(nil)
+	fmt.Println(iptr) // <nil>
 }
