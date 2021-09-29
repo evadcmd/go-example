@@ -37,6 +37,10 @@ func (c Dog) Eat(food string) {
 }
 
 func main() {
+	// go pass value instead of ref to func,
+	// so if we pass a value(copy) of struct to a func, golang could not get the origin ref from it.
+	// But if we pass a ref to a func, golang could get the struct back.
+
 	/* cannot use (Cat literal) (value of type Cat) as Animal value in variable declaration: missing method Eat (Eat has pointer receiver) */
 	// var c Animal = Cat{Name: "ZUZU", Age: 2}
 
