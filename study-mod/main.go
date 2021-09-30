@@ -14,6 +14,11 @@ func main() {
 		Phone: source.Phone{Num: "1234567"},
 	}
 	fmt.Println(p)
+	a := lib.Animal{
+		Name: "TANUKI",
+		Age:  2,
+	}
+	fmt.Println(a)
 	superman := internal.SuperMan{Person: p}
 	superman.Fly()
 }
