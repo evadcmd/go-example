@@ -45,6 +45,18 @@ func main() {
 	// panic: reflect: call of reflect.Value.SetBool on int Value
 	// vrz.Elem().SetBool(false)
 
-	vvz.Elem().SetInt(5)
+	// func (reflect.Value).SetInt(x int64)
+	vz = vvz.Elem()
+	vz.SetInt(5) // note that input type is type64
 	fmt.Println(z)
+	fmt.Println(reflect.TypeOf(z)) // still int
+	// reflect.Value -> specific typed value
+	// func (reflect.Value).Int() int64
+	zint64 := vz.Int()
+	tz := reflect.TypeOf(zint64)
+	fmt.Println(tz)        // int64!!
+	fmt.Println(tz.Kind()) // int64!!
+	// reflect.Value -> interface{}
+	iz := vz.Interface()
+	fmt.Println(iz) // 5
 }

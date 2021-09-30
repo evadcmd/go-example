@@ -8,11 +8,17 @@ type X struct {
 	Val int
 }
 
+type SomeItf interface {
+	DoSomething() string
+}
+
 func main() {
 	itf0 := (interface{})(nil)
 	fmt.Println(itf0 == nil) // true
 	itf1 := (interface{})(1)
 	fmt.Println(itf1 == nil) // false
+	itf2 := SomeItf(nil)
+	fmt.Println(itf2 == nil) // true!!
 	var x X
 	itfX := (interface{})(x)
 	fmt.Println(itfX == nil) // false!!
