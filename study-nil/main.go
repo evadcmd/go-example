@@ -10,7 +10,17 @@ type Inf interface {
 	method(int) int
 }
 
+type SomeStruct struct {
+	X        int
+	Y        int
+	Descript string
+}
+
 func main() {
+	/* CANNOT assign nil to struct */
+	// var s SomeStruct
+	// s = nil
+
 	// assign nil to ptr
 	var intptr *int
 	fmt.Println(intptr == nil) // true
