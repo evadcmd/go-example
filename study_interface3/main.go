@@ -4,17 +4,26 @@ import (
 	"fmt"
 )
 
+type X struct {
+	Val int
+}
+
 func main() {
-	n1 := (interface{})(nil)
-	if n1 == nil {
-		fmt.Println("null1")
-	}
-	nilptr := (*interface{})(nil)
-	if nilptr == nil {
-		fmt.Println("null2")
-	}
-	intv := (interface{})(1)
-	if intv == nil {
-		fmt.Println("intv")
-	}
+	itf0 := (interface{})(nil)
+	fmt.Println(itf0 == nil) // true
+	itf1 := (interface{})(1)
+	fmt.Println(itf1 == nil) // false
+	var x X
+	itfX := (interface{})(x)
+	fmt.Println(itfX == nil) // false!!
+
+	itfptr2nil := (*interface{})(nil)
+	fmt.Println(itfptr2nil == nil) // true!! a [interface{}] ptr pointing to 0x00
+	fmt.Println(itfptr2nil)        // <nil>
+	itfItfptr2nil := (interface{})(itfptr2nil)
+	fmt.Println(itfItfptr2nil == nil) // false
+
+	intptr2nil := (*int)(nil)
+	fmt.Println(intptr2nil == nil) // true!! a [int] ptr pointing to 0x00
+	fmt.Println(intptr2nil)        // <nil>
 }
