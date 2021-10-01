@@ -8,6 +8,10 @@ type Cat struct {
 }
 
 func (c *Cat) AgePlusOne() {
+	if c == nil {
+		fmt.Println("cat is nil!?")
+		return
+	}
 	c.Age++
 }
 
@@ -33,4 +37,8 @@ func main() {
 	c := Cat{}.Of("TATA", 3)
 	c.AgePlusOne()
 	fmt.Println(c)
+
+	// It is OK to call a method even if the method’s receiver is nil!!
+	var cptr *Cat
+	cptr.AgePlusOne()
 }
