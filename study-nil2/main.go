@@ -13,6 +13,8 @@ func main() {
 	// iterates zero times
 	for range s {
 	}
+	s = append(s, struct{}{}, struct{}{})
+	fmt.Println(s) //[{}]
 
 	// panic: runtime error: index out of range [1] with length 0
 	// fmt.Println(s[1])
