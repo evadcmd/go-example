@@ -13,4 +13,14 @@ func main() {
 	for k, v := range m {
 		fmt.Printf("k: %f, v: %s\n", k, v)
 	}
+	// delete an entry using key
+	delete(m, 1.1)
+	for k, v := range m {
+		fmt.Printf("k: %f, v: %s\n", k, v)
+	}
+	// delete an entry not existing
+	delete(m, 5.2)
+	for k, v := range m {
+		fmt.Printf("k: %f, v: %s\n", k, v)
+	}
 }
