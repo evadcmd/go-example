@@ -32,9 +32,11 @@ func main() {
 	y := plusOne(int(b2))
 	fmt.Printf("%T %d\n", y, y) // int 6
 
+	// Maybe a little like inheritance conceptually
+	// primitive value can be casted automatically !?
 	b3 := b1 + 2                  // It is OK!?
 	fmt.Printf("%T %d\n", b3, b3) // main.Bitcoin 4
 
-	b4 := bitcoinPlusOne(0)
+	b4 := bitcoinPlusOne(0)       // It is OK!?
 	fmt.Printf("%T %d\n", b4, b4) // main.Bitcoin 1
 }
