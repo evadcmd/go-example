@@ -10,6 +10,10 @@ func plusOne(x int) int {
 	return x + 1
 }
 
+func bitcoinPlusOne(x Bitcoin) Bitcoin {
+	return x + 1
+}
+
 func main() {
 	var b1 Bitcoin = 1
 	var b2 Bitcoin = 5
@@ -31,4 +35,6 @@ func main() {
 	b3 := b1 + 2                  // It is OK!?
 	fmt.Printf("%T %d\n", b3, b3) // main.Bitcoin 4
 
+	b4 := bitcoinPlusOne(0)
+	fmt.Printf("%T %d\n", b4, b4) // main.Bitcoin 1
 }
