@@ -65,9 +65,9 @@ func FullRune(p []byte) bool {
 	}
 	// Must be short or invalid.
 	accept := acceptRanges[x>>4]
-	if n > 1 && (p[1] < accept.lo || accept.hi < p[1]) { // 2nd byte is not well formed, so is a error rune
+	if n > 1 && (p[1] < accept.lo || accept.hi < p[1]) { // 2nd byte is not well formed, so the first byte is a error rune
 		return true
-	} else if n > 2 && (p[2] < locb || hicb < p[2]) { // 3rd byte is not well formed, so is a error rune
+	} else if n > 2 && (p[2] < locb || hicb < p[2]) { // 3rd byte is not well formed, so the first byte is a error rune
 		return true
 	}
 	return false
